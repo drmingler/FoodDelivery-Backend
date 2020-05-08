@@ -16,14 +16,23 @@ class Address(models.Model):
     street = models.CharField(max_length=250)
     postal_code = models.CharField(max_length=20, blank=True)
 
+    class Meta:
+        verbose_name_plural = 'Addresses'
+
 
 class Country(models.Model):
     country_name = models.CharField(max_length=50)
+
+    class Meta:
+        verbose_name_plural = 'Countries'
 
 
 class City(models.Model):
     country_id = models.ForeignKey(Country, on_delete=models.CASCADE)
     city_name = models.CharField(max_length=50)
+
+    class Meta:
+        verbose_name_plural = 'Cities'
 
 
 class Food(models.Model):
@@ -32,7 +41,7 @@ class Food(models.Model):
     price = models.FloatField()
 
 
-class OrderDetails(models.Model):
+class OrderDetail(models.Model):
     customer_id = models.ForeignKey(Customer, on_delete=models.CASCADE)
     order_type = models.CharField(max_length=30, default="Delivery")
     payment_method = models.CharField(max_length=30, default="Card")
@@ -41,6 +50,6 @@ class OrderDetails(models.Model):
 
 
 class OrderItem(models.Model):
-    order_details_id = models.ForeignKey(OrderDetails, on_delete=models.CASCADE)
+    order_details_id = models.ForeignKey(OrderDetail, on_delete=models.CASCADE)
     food_id = models.ForeignKey(Food, on_delete=models.CASCADE)
     quantity = models.IntegerField(default=1)
