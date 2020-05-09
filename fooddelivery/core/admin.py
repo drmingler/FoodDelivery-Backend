@@ -54,9 +54,11 @@ class OrderItemAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Customer, CustomerAdmin),
-admin.site.register(Country),
-admin.site.register(City),
-admin.site.register(Address),
-admin.site.register(Food),
-admin.site.register(OrderDetail),
-admin.site.register(OrderItem),
+admin.site.register(Country, CountryAdmin),
+admin.site.register(City, CityAdmin),
+admin.site.register(Address, AddressAdmin),
+admin.site.register(Food, FoodAdmin),
+admin.site.register(OrderDetail, OrderDetailAdmin),
+admin.site.register(OrderItem, OrderItemAdmin)
+# admin.site.register(OrderDetail),
+# admin.site.register(OrderItem)
