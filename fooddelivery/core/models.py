@@ -77,3 +77,6 @@ class OrderItem(models.Model):
 
     def get_total_item_price(self):
         return self.quantity * self.food_id.price
+
+    def update_subtotal(self):
+        return self.order_details_id

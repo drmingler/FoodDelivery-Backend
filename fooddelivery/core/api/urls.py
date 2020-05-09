@@ -1,3 +1,7 @@
 from django.urls import path, include
+from .views import OrderItemListView
 
-urlpatterns = [path("", name="list_subscribers")]
+
+urlpatterns = [
+    path('', OrderItemListView.as_view(), name="list_api_view"),
+]

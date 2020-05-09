@@ -50,6 +50,7 @@ class OrderItemAdmin(admin.ModelAdmin):
     list_display = ['order_details_id',
                     'food_id',
                     'quantity',
+                    'get_total_item_price'
                     ]
 
 
