@@ -73,10 +73,21 @@ class OrderItem(models.Model):
     quantity = models.IntegerField(default=1)
 
     def __str__(self):
-        return f"{self.quantity} of {self.food_id.food_name}"
+        return f"{self.order_details_id} of {self.food_id.food_name}"
 
-    def get_total_item_price(self):
+    def totalItemPrice(self):
         return self.quantity * self.food_id.price
 
-    def update_subtotal(self):
-        return self.order_details_id
+    def price(self):
+        return self.food_id.price
+
+
+class Transaction(models.Model):
+    ordered_item = models.ManyToManyField(OrderItem, blank=True)
+    order_details = models.ForeignKey(OrderDetail, on_delete=models.CASCADE, blank=True)
+
+    def total(self):
+        total = 0
+        for item in self.ordered_item.all():
+            total += item.totalItemPrice()
+        return total
