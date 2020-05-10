@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Customer, Country, City, Address, Food, OrderDetail, OrderItem
+from .models import Customer, Country, City, Address, Food, OrderDetail, OrderItem, Transaction
 
 
 # Register your models here.
@@ -50,7 +50,13 @@ class OrderItemAdmin(admin.ModelAdmin):
     list_display = ['order_details_id',
                     'food_id',
                     'quantity',
-                    'get_total_item_price'
+                    'totalItemPrice'
+                    ]
+
+
+class TransactionAdmin(admin.ModelAdmin):
+    list_display = [
+                    'order_details'
                     ]
 
 
@@ -61,5 +67,4 @@ admin.site.register(Address, AddressAdmin),
 admin.site.register(Food, FoodAdmin),
 admin.site.register(OrderDetail, OrderDetailAdmin),
 admin.site.register(OrderItem, OrderItemAdmin)
-# admin.site.register(OrderDetail),
-# admin.site.register(OrderItem)
+admin.site.register(Transaction,TransactionAdmin),
