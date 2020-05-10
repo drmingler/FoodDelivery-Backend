@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../FIRST_DJANGO_PROJECT/.idea/DJANGO.iml" filepath="$PROJECT_DIR$/../FIRST_DJANGO_PROJECT/.idea/DJANGO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../DJANGO-REST-API-master/.idea/DJANGO-REST-API-master.iml" filepath="$PROJECT_DIR$/../DJANGO-REST-API-master/.idea/DJANGO-REST-API-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../DjangoRestFramework/.idea/DjangoRestFramework.iml" filepath="$PROJECT_DIR$/../DjangoRestFramework/.idea/DjangoRestFramework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/FoodDelivery.iml" filepath="$PROJECT_DIR$/.idea/FoodDelivery.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../djangotutiorials/.idea/djangotutiorials.iml" filepath="$PROJECT_DIR$/../djangotutiorials/.idea/djangotutiorials.iml" />
+    </modules>
+  </component>
+</project>
