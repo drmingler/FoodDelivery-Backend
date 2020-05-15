@@ -62,6 +62,8 @@ class OrderDetail(models.Model):
     payment_method = models.CharField(max_length=30, default="Card")
     order_date = models.DateField(auto_now_add=True)
     order_time = models.DateTimeField(auto_now_add=True)
+    shipping_address = models.ForeignKey(
+        Address, related_name='shipping_address',on_delete=models.CASCADE, blank=True, null=True)
 
     def __str__(self):
         return self.customer_id.first_name

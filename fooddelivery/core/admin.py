@@ -43,6 +43,7 @@ class OrderDetailAdmin(admin.ModelAdmin):
                     'payment_method',
                     'order_date',
                     'order_time',
+                    'shipping_address'
                     ]
 
 

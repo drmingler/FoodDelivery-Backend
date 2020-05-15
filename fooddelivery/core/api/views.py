@@ -72,7 +72,7 @@ class CreateOrderView(APIView):
             )
             new_address.save()
 
-            new_order_details = OrderDetail.objects.create(customer_id=new_customer)
+            new_order_details = OrderDetail.objects.create(customer_id=new_customer, shipping_address=new_address)
             new_order_details.save()
 
             # Loop through food in the food list and create an order item instance for it
@@ -94,4 +94,4 @@ class CreateOrderView(APIView):
             print(e)
             return Response({"message": "Something went wrong request"}, status=HTTP_200_OK)
 
-        return Response({"message": "Order Successfull"}, status=HTTP_200_OK)
+        return Response({"message": "Order Successfull", "id": new_transaction.id}, status=HTTP_200_OK)

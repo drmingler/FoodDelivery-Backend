@@ -18,10 +18,13 @@ class FoodSerializer(serializers.ModelSerializer):
 
 class OrderDetailSerializer(serializers.ModelSerializer):
     customerName = serializers.StringRelatedField(source='customer_id.first_name')
-
+    phone_number  =  serializers.StringRelatedField(source='customer_id.phone_number')
+    city = serializers.StringRelatedField(source='shipping_address.city_id')
+    street = serializers.StringRelatedField(source='shipping_address.street')
+    postal_code = serializers.StringRelatedField(source='shipping_address.postal_code')
     class Meta:
         model = OrderDetail
-        fields = ['id', 'customerName', 'order_type', 'payment_method', 'order_date', 'order_time']
+        fields = ['id', 'customerName', 'order_type', 'payment_method', 'order_date', 'order_time', 'phone_number','city','street','postal_code']
 
 
 class OrderItemSerializer(serializers.ModelSerializer):
