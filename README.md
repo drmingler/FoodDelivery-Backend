@@ -4,7 +4,7 @@
 
 An application for the management of a Food delivery services.
 
-#### Functionalities:
+## Functionalities:
 
 List all orders
 
