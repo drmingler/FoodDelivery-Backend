@@ -19,9 +19,9 @@ Make sure you have Git and Python, before you proceed.
 
 #### 1. Clone the repository to your local machine
 To clone and run this application, you will need Git installed on your computer.
-
+```
 $ git clone https://github.com/drmingler/FoodDelivery-Backend.git
-
+```
 #### 2. To install dependencies, from within the project directory:
 
 ##### Go Into the fooddelivery folder then run:
